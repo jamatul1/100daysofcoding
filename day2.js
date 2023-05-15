@@ -29,10 +29,9 @@ var findDuplicate = function (nums) {
   let i = 0;
   while (i < nums.length) {
     while (nums[i] !== i + 1) {
-      let correctPos = nums[nums[i] - 1];
-      if (correctPos === nums[i]) break;
-      let temp = correctPos;
-      correctPos = nums[i];
+      if (nums[nums[i] - 1] === nums[i]) break;
+      let temp = nums[nums[i] - 1];
+      nums[nums[i] - 1] = nums[i];
       nums[i] = temp;
     }
     i++;
