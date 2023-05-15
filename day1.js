@@ -22,6 +22,7 @@ var majorityElement = function (nums) {
   for (let i of nums) {
     if (map.get(i) > nums.length / 2) return i;
   }
+  // it will never happened
   return false;
 };
 
