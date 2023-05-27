@@ -80,13 +80,14 @@ function binarySearch(nums, target) {
   let m;
   while (s <= e) {
     m = s + Math.floor((e - s) / 2);
-    if (nums[m] === target) return true;
+    if (nums[m] === target) return m;
     else if (nums[m] > target) {
       e = m - 1;
     } else {
       s = m + 1;
     }
   }
+  return e;
 }
 // console.log(
 //   searchMatrix(
@@ -249,4 +250,3 @@ var search = function (nums, target) {
   }
   return -1;
 };
-console.log(search([8, 9, 11, 2, 3, 4, 7], 12));
