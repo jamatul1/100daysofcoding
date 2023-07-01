@@ -22,7 +22,6 @@ var subsetsWithDup = function (nums) {
 var subsets = function (nums) {
   let res = [[]];
   for (let i of nums) {
-    let temp = [];
     let len = res.length;
     for (let j = 0; j < len; j++) {
       let item = [...res[j]];
