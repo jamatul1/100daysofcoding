@@ -1,5 +1,4 @@
 /** ------------ 421. Maximum XOR of Two Numbers in an Array----------- */
-
 var findMaximumXOR = function (nums) {
   let n = nums.length;
   let max = 0,
