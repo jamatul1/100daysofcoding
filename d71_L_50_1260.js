@@ -44,5 +44,4 @@ var shiftGrid = function (grid, k) {
   return shifted;
 };
 
-// 50. Pow(x, n)
-// 1260. Shift 2D Grid d71_L_50_1260
+
