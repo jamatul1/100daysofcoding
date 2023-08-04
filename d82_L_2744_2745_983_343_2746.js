@@ -92,3 +92,5 @@ var minimizeConcatenatedLength = function (words) {
     words[0].length + dfs(1, words[0][0], words[0][words[0].length - 1], 0)
   );
 };
+// d82_L_2744_2745_983_343_2746
+// 2746. Decremental String Concatenation, 343. Integer Break, 983. Minimum Cost For Tickets, 2745. Construct the Longest New String,2744. Find Maximum Number of String Pairs
