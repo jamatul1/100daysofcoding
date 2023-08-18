@@ -1,8 +1,8 @@
 /**----------542. 01 Matrix---------- */
 var updateMatrix = function (mat) {
-  const rows = mat.length;
-  const cols = mat[0].length;
-  const directions = [
+  const n = mat.length;
+  const m = mat[0].length;
+  const dir = [
     [0, 1],
     [0, -1],
     [1, 0],
@@ -10,8 +10,8 @@ var updateMatrix = function (mat) {
   ];
   const queue = [];
 
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < m; j++) {
       if (mat[i][j] === 0) {
         queue.push([i, j]);
       } else {
@@ -22,20 +22,19 @@ var updateMatrix = function (mat) {
 
   while (queue.length > 0) {
     const [row, col] = queue.shift();
-
-    for (const [dr, dc] of directions) {
-      const new_row = row + dr;
-      const new_col = col + dc;
+    for (const [dr, dc] of dir) {
+      const cRow = row + dr;
+      const cCol = col + dc;
 
       if (
-        new_row >= 0 &&
-        new_row < rows &&
-        new_col >= 0 &&
-        new_col < cols &&
-        mat[new_row][new_col] > mat[row][col] + 1
+        cRow >= 0 &&
+        cRow < n &&
+        cCol >= 0 &&
+        cCol < m &&
+        mat[cRow][cCol] > mat[row][col] + 1
       ) {
-        mat[new_row][new_col] = mat[row][col] + 1;
-        queue.push([new_row, new_col]);
+        mat[cRow][cCol] = mat[row][col] + 1;
+        queue.push([cRow, cCol]);
       }
     }
   }
